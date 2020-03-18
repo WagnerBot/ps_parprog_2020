@@ -1,0 +1,39 @@
+# Peter Koll, Jonas Wagner
+
+Exercise 1:
+
+- How is the speedup of a parallel program defined?
+	S(p) = ts / tp = Execution time using one processor / Execution time using a multiprocessor with p processors
+
+- What is the formal definition of Amdahl's law and what relationship does it describe for parallel programs (explain in your own words)? Why/How is this significant?
+	S(p) = p / (1 + (p - 1) f)
+	It describes the speedup we are able to obtain by using more than one processor. So the number of processors p is divided by the procentual speedup factor f which is multiplied
+	with the number of processors minus one and then we add 1. We can speed up the whole process to a maximum by using every single processor to get a job done in a parallel manner.
+	This is significant because we are now able to calculate a theoratical speedup which helps us to choose a way of programming and the right equipment.
+
+- Compute the theoretical speedup of a program that spends 10% of its time in unparallelizable, sequential regions for 6 cores and for a hypothetically unlimited number of cores.
+	S(p) = p / (1 + (p - 1) f)
+  	S(6) = 6 / (1 + (6 - 1) * 0.1) = 4
+  	S(100) = 100 / (1 + (100 - 1) * 0.1) = 9.17
+	S(1000) = 1000 / (1 + (1000 - 1) * 0.1) = 9.91
+  	S(10000) = 10000 / (1 + (10000 - 1) * 0.1) = 9.99
+  
+  So we are getting close to 1/f = 10. 
+  There won't be a speeup at a certain point no matter how many processors we are taking if the programm doesn't suit good parallel programming.
+  
+- Compute the theoretical speedup of a program that spends 20% of its time in unparallelizable, sequential regions for 6 cores and for a hypothetically unlimited number of cores.
+	S(p) = p / (1 + (p - 1) f)
+	S(6) = 6 / (1 + (6 - 1) * 0.2) = 3
+	S(100) = 100 / (1 + (100 - 1) * 0.2) = 4.81
+	S(1000) = 1000 / (1 + (1000 - 1) * 0.2) = 4.98
+	S(10000) = 10000 / (1 + (10000 - 1) * 0.2) = 4.99
+  
+  So we are getting close to 1/f = 5.
+  Every speed up depends on the time in unparallelizable, sequential regions. 10% less time spent in unparallelizable, sequential regions leads to a speed up by factor 2.
+
+
+- Given an algorithm of time complexity O(n^3). How large (in %) can the unparallelizable, sequential region be at most, such that a speedup of 10 can be achieved using 64 cores?
+	10 = 64 / (1 + 63x)
+	x = 0.085	
+	
+	The program can not spend more then 8.5% of its time in unparallelizable, sequential regions if a speedup of 10 should be hold.
