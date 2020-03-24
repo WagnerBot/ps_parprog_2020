@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int n = 100;
+int n = 1000;
 
 int main(){
   int a[n][n];
