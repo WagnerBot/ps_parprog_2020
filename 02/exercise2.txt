@@ -5,15 +5,44 @@ I)
 for the first implementation the function f should be 8x * (n / (s/32))
 = 8x*(32n/s).
 8x: 8 sets while every matrix A and B gets 4 sets each, but we need to access
-    every matrix which leads to 4*2 = 8. x is the number of lines.
-n:  length of a line of a matrix
-s/32: length of a line within the cache divided by the size of an element
+    every matrix which leads to 4*2 = 8. x is the number of rows.
+n:  length of a row of a matrix
+s/32: length of a row within the cache divided by the size of an element
         within the matrix. so this describes the number of elements which can
-        be stored in a cache line.
-we have a cache miss per line.
+        be stored in a cache row.
+we have a cache miss per row.
         
 II)
 we multiply the matrices by columns which leads to a cache miss everytime we
-want to access a line and a column. so the misses will be n². the whole 
+want to access a row and a column. so the misses will be n². the whole 
 function needs to be multiplied by 2 because of the number of objects to be
 multiplied (A, B).
+
+
+working on the lcc2 cluster:
+size n = 1000
+
+cachegrind: 
+1:
+D   refs:       72,050,735  (55,035,581 rd   + 17,015,154 wr)
+D1  misses:        314,346  (   126,308 rd   +    188,038 wr)
+D1  miss rate:         0.4% (       0.2%     +        1.1%  )
+
+2:
+D   refs:       72,050,735  (55,035,581 rd   + 17,015,154 wr)
+D1  misses:      3,126,861  ( 2,001,308 rd   +  1,125,553 wr)
+D1  miss rate:         4.3% (       3.6%     +        6.6%  )
+
+
+perf:
+1:
+6,584      cache-misses:u
+
+2:
+157,036      cache-misses:u
+
+rowbased implementation like the first one is much better in cache misses then 
+the column based one. the function of II is exact for results of cachegrind.
+I is not proveable since we dont know s and x.
+                                             
+
