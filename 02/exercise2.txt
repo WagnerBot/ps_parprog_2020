@@ -1,0 +1,19 @@
+#Peter Koll, Jonas Wagner
+
+Exercise 2
+I)
+for the first implementation the function f should be 8x * (n / (s/32))
+= 8x*(32n/s).
+8x: 8 sets while every matrix A and B gets 4 sets each, but we need to access
+    every matrix which leads to 4*2 = 8. x is the number of lines.
+n:  length of a line of a matrix
+s/32: length of a line within the cache divided by the size of an element
+        within the matrix. so this describes the number of elements which can
+        be stored in a cache line.
+we have a cache miss per line.
+        
+II)
+we multiply the matrices by columns which leads to a cache miss everytime we
+want to access a line and a column. so the misses will be n². the whole 
+function needs to be multiplied by 2 because of the number of objects to be
+multiplied (A, B).

@@ -1,0 +1,22 @@
+#Peter Koll, Jonas Wagner
+
+Exercise 1
+a)
+with one processor: O(n³ + n)
+with p processors: O(n³/p + n)
+when we use one processor the time complexity will stay n³+n.
+with every added processor n³/(2, 3, ... ) we will speedup the algorithm.
+if we would like to plot a graph of this complexity it will be 1/log(p).
+
+b)
+speedup up = O(n^(2.8) / O(n^3/p + n)
+when we just use a few processors, the parallel algorithm is slower than the
+sequential algorithm. At a certain point, the parrallel algorithm gets faster
+than the sequential one as described in c)
+
+
+c) 
+we set n^(2.8) = (n³/p) + n
+this leads to p = n²/(n^(1.8)-1)
+so if at this point the two graphs intersect. if we add 1 processor (p+1)
+the parallel algorithm will be faster.
