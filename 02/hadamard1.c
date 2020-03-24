@@ -1,3 +1,4 @@
+//Peter Koll, Jonas Wagner
 #include <stdio.h>
 #include <stdlib.h>
 
