@@ -31,5 +31,5 @@ int main(void) {
 
 /*
  * b) the output is not predictable and changes with every execution. we can fix this behaviour by a for-loop which controlls the execution of each thread one by one.
- * d) for every nested region we can define a new number of threads, which will execute the given task. this leads to a parallel region within another parallel region (number of threads ^ (level of the nested region)).
+ * d) for every nested region we can define a new number of threads, which will execute the given task. this leads to a parallel region within another parallel region (multiply the number of threads for each level of the nested regions).
  */
