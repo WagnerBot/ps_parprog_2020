@@ -1,0 +1,123 @@
+row-based
+n = 10000
+Work took 1.112558 seconds (1 threads)
+Work took 0.588123 seconds (2 threads)
+Work took 0.313725 seconds (4 threads)
+Work took 0.239915 seconds (8 threads)
+
+n = 20000
+Work took 4.553251 seconds (1 threads)
+Work took 2.372230 seconds (2 threads)
+Work took 1.332046 seconds (4 threads)
+Work took 0.973258 seconds (8 threads)
+
+n = 30000
+/usr/sge/lcc2/spool/n004/job_scripts/49992: line 27:  9825 Segmentation fault	   (core dumped) ./had1
+
+
+coloumn-based
+n = 10000
+Work took 8.218484 seconds (1 threads)
+Work took 4.300808 seconds (2 threads)
+Work took 2.059693 seconds (4 threads)
+Work took 4.268787 seconds (8 threads)
+
+n = 20000
+Work took 175.033322 seconds (1 threads)
+Work took 95.019660 seconds (2 threads)
+Work took 52.673292 seconds (4 threads)
+Work took 35.080668 seconds (8 threads)
+
+n = 30000
+/usr/sge/lcc2/spool/n003/job_scripts/50051: line 28:  7953 Segmentation fault	   (core dumped) ./had2
+
+
+row-based
+(static)
+n = 10000
+Work took 1.120252 seconds (1 threads)
+Work took 0.591180 seconds (2 threads)
+Work took 0.316648 seconds (4 threads)
+Work took 0.240839 seconds (8 threads)
+
+(static)
+n = 20000
+Work took 4.534801 seconds (1 threads)
+Work took 2.395341 seconds (2 threads)
+Work took 1.280876 seconds (4 threads)
+Work took 0.967056 seconds (8 threads)
+
+(dynamic)
+n = 10000
+Work took 6.772447 seconds (1 threads)
+Work took 13.619936 seconds (2 threads)
+Work took 9.127385 seconds (4 threads)
+Work took 10.986162 seconds (8 threads)
+
+(dynamic)
+n = 20000
+Work took 27.142183 seconds (1 threads)
+Work took 66.623914 seconds (2 threads)
+Work took 65.317567 seconds (4 threads)
+Work took 77.381599 seconds (8 threads)
+
+(guided)
+n = 10000
+Work took 1.127427 seconds (1 threads)
+Work took 0.595418 seconds (2 threads)
+Work took 0.317539 seconds (4 threads)
+Work took 0.240377 seconds (8 threads)
+
+(guided)
+n = 20000
+Work took 4.520418 seconds (1 threads)
+Work took 2.398780 seconds (2 threads)
+Work took 1.276039 seconds (4 threads)
+Work took 0.968851 seconds (8 threads)
+
+
+coloumn-based
+(static)
+n = 10000
+Work took 8.025280 seconds (1 threads)
+Work took 4.175322 seconds (2 threads)
+Work took 3.526291 seconds (4 threads)
+Work took 4.368813 seconds (8 threads)
+
+(static)
+n = 20000
+Work took 169.698711 seconds (1 threads)
+Work took 93.398449 seconds (2 threads)
+Work took 53.653505 seconds (4 threads)
+Work took 34.971585 seconds (8 threads)
+
+(dynamic)
+n = 10000
+Work took 18.402434 seconds (1 threads)
+Work took 16.011139 seconds (2 threads)
+Work took 9.601004 seconds (4 threads)
+Work took 7.731111 seconds (8 threads)
+
+(dynamic)
+n = 20000
+Work took 299.672543 seconds (1 threads)
+Work took 170.092547 seconds (2 threads)
+Work took 108.650611 seconds (4 threads)
+Work took 145.651243 seconds (8 threads)
+
+(guided)
+n = 10000
+Work took 8.020615 seconds (1 threads)
+Work took 4.197010 seconds (2 threads)
+Work took 2.343825 seconds (4 threads)
+Work took 4.566590 seconds (8 threads)
+
+(guided)
+n = 20000
+Work took 168.367982 seconds (1 threads)
+Work took 91.814677 seconds (2 threads)
+Work took 51.125710 seconds (4 threads)
+Work took 35.084654 seconds (8 threads)
+
+
+
