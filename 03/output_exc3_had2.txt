@@ -1,0 +1,85 @@
+coloumn-based
+n = 10000
+Work took 7.861766 seconds (1 threads)
+        Command being timed: "./had2 1"
+        User time (seconds): 10.20
+        System time (seconds): 0.97
+        Percent of CPU this job got: 99%
+        Elapsed (wall clock) time (h:mm:ss or m:ss): 0:11.19
+Work took 4.040527 seconds (2 threads)
+        Command being timed: "./had2 2"
+        User time (seconds): 10.27
+        System time (seconds): 1.09
+        Percent of CPU this job got: 154%
+        Elapsed (wall clock) time (h:mm:ss or m:ss): 0:07.37
+Work took 2.227426 seconds (4 threads)
+        Command being timed: "./had2 4"
+        User time (seconds): 10.69
+        System time (seconds): 1.12
+        Percent of CPU this job got: 212%
+        Elapsed (wall clock) time (h:mm:ss or m:ss): 0:05.55
+Work took 4.315179 seconds (8 threads)
+        Command being timed: "./had2 8"
+        User time (seconds): 35.83
+        System time (seconds): 1.55
+        Percent of CPU this job got: 489%
+        Elapsed (wall clock) time (h:mm:ss or m:ss): 0:07.64
+------------------------------------------------------------
+n = 20000
+Work took 169.770079 seconds (1 threads)
+        Command being timed: "./had2 1"
+        User time (seconds): 178.76
+        System time (seconds): 4.20
+        Percent of CPU this job got: 99%
+        Elapsed (wall clock) time (h:mm:ss or m:ss): 3:03.05
+Work took 92.505092 seconds (2 threads)
+        Command being timed: "./had2 2"
+        User time (seconds): 193.67
+        System time (seconds): 4.36
+        Percent of CPU this job got: 187%
+        Elapsed (wall clock) time (h:mm:ss or m:ss): 1:45.78
+Work took 52.497513 seconds (4 threads)
+        Command being timed: "./had2 4"
+        User time (seconds): 217.50
+        System time (seconds): 4.85
+        Percent of CPU this job got: 338%
+        Elapsed (wall clock) time (h:mm:ss or m:ss): 1:05.78
+Work took 36.368179 seconds (8 threads)
+        Command being timed: "./had2 8"
+        User time (seconds): 291.89
+        System time (seconds): 5.71
+        Percent of CPU this job got: 586%
+        Elapsed (wall clock) time (h:mm:ss or m:ss): 0:50.72
+------------------------------------------------------------
+n = 30000
+Work took 399.918599 seconds (1 threads)
+        Command being timed: "./had2 1"
+        User time (seconds): 420.60
+        System time (seconds): 9.38
+        Percent of CPU this job got: 99%
+        Elapsed (wall clock) time (h:mm:ss or m:ss): 7:10.16
+Work took 215.523515 seconds (2 threads)
+        Command being timed: "./had2 2"
+        User time (seconds): 450.40
+        System time (seconds): 10.15
+        Percent of CPU this job got: 187%
+        Elapsed (wall clock) time (h:mm:ss or m:ss): 4:05.40
+Work took 124.803522 seconds (4 threads)
+        Command being timed: "./had2 4"
+        User time (seconds): 515.78
+        System time (seconds): 11.08
+        Percent of CPU this job got: 340%
+        Elapsed (wall clock) time (h:mm:ss or m:ss): 2:34.70
+Work took 88.049785 seconds (8 threads)
+        Command being timed: "./had2 8"
+        User time (seconds): 702.63
+        System time (seconds): 13.27
+        Percent of CPU this job got: 606%
+        Elapsed (wall clock) time (h:mm:ss or m:ss): 1:57.96
+        
+the user time is increasing like the number of threads obviously.
+the elapsed wall time is shrinking with the number of threads. 
+conclusion: the threads are working more time in the user kernel 
+while the wall clock time is shrinking because the workspeed is
+increasing with the number of threads.
+

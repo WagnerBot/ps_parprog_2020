@@ -27,7 +27,7 @@
 
 # Set up any environment variables
 #export ENVIRONMENT_VARIABLE=foobar
-./had2 1
-./had2 2
-./had2 4
-./had2 8
+/usr/bin/time -v ./had2 1
+/usr/bin/time -v ./had2 2
+/usr/bin/time -v ./had2 4
+/usr/bin/time -v ./had2 8
