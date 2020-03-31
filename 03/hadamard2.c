@@ -6,9 +6,9 @@
 
 int SIZE = 10000;
 
-int main(){
+int main(int argc, char* argv[]){
   double start, end;
-  int n_threads = 1;
+  int n_threads = atoi(argv[1]);
 
   int **a = (int**)malloc(SIZE * sizeof(int*));
   int **b = (int**)malloc(SIZE * sizeof(int*));
@@ -19,7 +19,6 @@ int main(){
     b[i] = (int*)malloc(SIZE * sizeof(int));
     c[i] = (int*)malloc(SIZE * sizeof(int));
   }
-
 
   srand(time(NULL));
   for(int i = 0; i < SIZE; i++){
