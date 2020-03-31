@@ -167,6 +167,15 @@ Work took 215.009794 seconds (2 threads)
 Work took 123.916645 seconds (4 threads)
 Work took 84.829351 seconds (8 threads)
 
+-----------------------------------------------------
+How do they differ?:
+Während beim statischen scheduling die schleifendurchläufe strikt auf die anzahl der verfügbaren threads aufgeteilt werden, wird beim dynamischen scheduling der aufwand für die Unterteile berechnet und dementsprechend die threads aufgeteilt.
+Das guided scheduling is ähnlich wie das dynamische, jedoch werden beim guided scheduling noch die threads auf die stücke angepasst, wenn es unbalanciert ist.
+
+What do I observe?
+zum einen entstehen mit dynamic scheduling längere Laufzeiten, zum anderen erhöht sich teilweise beim Zeilen-basierten Verfahren die Laufzeit mit steigender thread zahl und steigender Matrizengröße.
+
+
 
 
 
