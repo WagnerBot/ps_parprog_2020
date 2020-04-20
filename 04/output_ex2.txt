@@ -1,0 +1,9 @@
+Original (1 Threads): res: 35309705, time: 18.90 seconds
+Original (2 Threads): res: 4037078196, time: 14.68 seconds
+Original (4 Threads): res: 2671795592, time: 15.60 seconds
+Original (8 Threads): res: 1545216603, time: 24.26 seconds
+Optimized (Threads: 1): res: 545496156297, time: 20.84 seconds
+Optimized (Threads: 2): res: 545496156297, time: 10.57 seconds
+Optimized (Threads: 4): res: 545496156297, time: 5.51 seconds
+Optimized (Threads: 8): res: 545496156297, time: 2.95 seconds
+

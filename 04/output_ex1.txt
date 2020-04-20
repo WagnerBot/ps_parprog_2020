@@ -1,0 +1,12 @@
+Critical/ 1 thread(s): Work took 8.073330 seconds, Pi = 3.141612
+Critical/ 2 thread(s): Work took 4.043464 seconds, Pi = 3.141606
+Critical/ 4 thread(s): Work took 2.023042 seconds, Pi = 3.141607
+Critical/ 8 thread(s): Work took 1.033385 seconds, Pi = 3.141563
+Atomic/ 1 thread(s): Work took 8.067909 seconds, Pi = 3.141612
+Atomic/ 2 thread(s): Work took 4.043228 seconds, Pi = 3.141606
+Atomic/ 4 thread(s): Work took 2.023278 seconds, Pi = 3.141607
+Atomic/ 8 thread(s): Work took 1.031770 seconds, Pi = 3.141563
+Reduction/ 1 thread(s): Work took 8.075909 seconds, Pi = 3.141612
+Reduction/ 2 thread(s): Work took 4.043006 seconds, Pi = 3.141606
+Reduction/ 4 thread(s): Work took 2.022540 seconds, Pi = 3.141607
+Reduction/ 8 thread(s): Work took 1.013345 seconds, Pi = 3.141563

@@ -1,3 +1,4 @@
+// Peter Koll, Jonas Wagner
 #include <errno.h>
 #include <omp.h>
 #include <stdio.h>
@@ -68,7 +69,7 @@ int main(int argc, char **argv) {
     if (!local_res) PERROR_GOTO(error_c);
     status = EXIT_SUCCESS;
 
-	// fill matrix
+	// fill matrix parallel
 	srand(7);
 	for (long i = 0; i < n; ++i) {
 		for (long j = 0; j < n; ++j) {
@@ -77,11 +78,13 @@ int main(int argc, char **argv) {
 		}
 	}
 
+	unsigned long res = 0;
 	double start_time = omp_get_wtime();
-#pragma omp parallel default(none) shared(n, a, b, c, local_res)
-	{
+
 		// matrix multiplication
-#pragma omp parallel for default(none) shared(n, a, b, c)
+#pragma omp parallel default(none) shared(n, a, b, c, res)
+{
+ #pragma omp for collapse(3)
 		for (long i = 0; i < n; ++i) {
 			for (long j = 0; j < n; ++j) {
 				for (long k = 0; k < n; ++k) {
@@ -91,19 +94,16 @@ int main(int argc, char **argv) {
 		}
 
 		// sum of matrix c
-#pragma omp parallel for default(none) shared(n, a, b, c, local_res)
-		for (long i = 0; i < n; ++i) {
-			for (long j = 0; j < n; ++j) {
-				local_res[omp_get_thread_num()] += c[i][j];
+		#pragma omp for collapse(2)
+			for (long i = 0; i < n; ++i) {
+				for (long j = 0; j < n; ++j) {
+					#pragma omp atomic
+					res += c[i][j];
+				}
 			}
-		}
-	}
-	unsigned long res = 0;
-	for (int l = 0; l < omp_get_num_threads(); ++l) {
-		res += local_res[l];
-	}
+}
 	double end_time = omp_get_wtime();
-	printf("Original (%d Threads): res: %lu, time: %2.2f seconds\n", omp_get_max_threads(), res, end_time - start_time);
+	printf("Optimized (Threads: %d): res: %lu, time: %2.2f seconds\n", omp_get_max_threads(), res, end_time - start_time);
 
 	// cleanup
 	free(local_res);
