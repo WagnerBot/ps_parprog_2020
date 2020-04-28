@@ -44,3 +44,5 @@ perf:
 rowbased implementation like the first one is much better in cache misses then
 the column based one. the function of II is exact for results of cachegrind.
 I is not proveable since we dont know s and x.
+<<<<<<< HEAD
+>>>>>>> 015cd53... updated
