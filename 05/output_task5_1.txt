@@ -1,0 +1,20 @@
+bind=true, places=threads/cores/sockets
+Threads (4), Iterations (100000000), Time taken: 3.148320
+Threads (4), Iterations (100000000), Time taken: 3.145580
+Threads (4), Iterations (100000000), Time taken: 2.914734
+bind=false, places=threads/cores/sockets
+Threads (4), Iterations (100000000), Time taken: 3.655679
+Threads (4), Iterations (100000000), Time taken: 3.662842
+Threads (4), Iterations (100000000), Time taken: 3.661567
+bind=close, places=threads/cores/sockets
+Threads (4), Iterations (100000000), Time taken: 3.140245
+Threads (4), Iterations (100000000), Time taken: 3.148930
+Threads (4), Iterations (100000000), Time taken: 2.222531
+bind=master, places=threads/cores/sockets
+Threads (4), Iterations (100000000), Time taken: 1.075521
+Threads (4), Iterations (100000000), Time taken: 1.075418
+Threads (4), Iterations (100000000), Time taken: 8.403089
+bind=spread, places=threads/cores/sockets
+Threads (4), Iterations (100000000), Time taken: 8.391125
+Threads (4), Iterations (100000000), Time taken: 8.397747
+Threads (4), Iterations (100000000), Time taken: 2.914614
