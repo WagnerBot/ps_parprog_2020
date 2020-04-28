@@ -1,5 +1,5 @@
 // Peter Koll, Jonas Wagner
-// Inspiration: https://www.geeksforgeeks.org/iterative-merge-sort/
+// Inspiration: https://www.geeksforgeeks.org/merge-sort/
 #include <stdlib.h>
 #include <stdio.h>
 #include <omp.h>
