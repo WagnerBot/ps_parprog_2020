@@ -76,3 +76,5 @@ int main(int argc, char **argv){
     printf("Time: %f\n", end - start);
     return EXIT_SUCCESS;
 }
+
+// its hard to benchmark since the programm runs within the root folder in under 0.00x seconds
