@@ -25,10 +25,15 @@ void printTemperature(double *m, int N, int M);
 
 int main(int argc, char **argv) {
     // 'parsing' optional input parameter = problem size
-    int N = 200;
-    if (argc > 1) {
-        N = atoi(argv[1]);
+    
+    if (argc != 3) {
+        printf("Invalid call: ./heat <N> <threads>\n");
+        return EXIT_FAILURE;
     }
+
+    int N = atoi(argv[1]);
+    int threads = atoi(argv[2]);
+
     int T = N * 10;
     printf("Computing heat-distribution for room size %dX%d for T=%d timesteps\n", N, N, T);
 
@@ -56,15 +61,33 @@ int main(int argc, char **argv) {
     printf("\n");
 
     // ---------- compute ----------
-
+    double start, end;
     // create a second buffer for the computation
     double *B = malloc(sizeof(double) * N * N);
     if(!B) PERROR_GOTO(error_b);
     // for each time step ..
+    start = omp_get_wtime();
     for (int t = 0; t < T; t++) {
         // todo implement heat propagation, if at corner, use own heat value
         // todo make sure the heat source stays the same
+        #pragma omp parallel for collapse(2) num_threads(threads)
+        for(int i = 0; i < N; i++){
+            for(int j = 0; j < N; j++){
+                if((i == source_x) && (j == source_y)){
+                    B[IND(i,j)]=A[IND(i, j)];
+                    continue;
+                } 
 
+                int up = (i == 0 ? 0 : i-1);
+                int down = (i == (N-1) ? (N-1) : i+1);
+                int left = (j == 0 ? 0 : j-1);
+                int right = (j == (N-1) ? (N-1) : j+1);
+
+                B[IND(i, j)] = 0.5*A[IND(i, j)] + (A[IND(up, j)] + A[IND(i, left)] + A[IND(i, right)] + A[IND(down, j)])/8;               
+            }
+        }
+       
+        memcpy(A, B, sizeof(double)*N*N);
         // every 1000 steps show intermediate step
         if (!(t % 1000)) {
             printf("Step t=%d\n", t);
@@ -72,6 +95,7 @@ int main(int argc, char **argv) {
             printf("\n");
         }
     }
+    end = omp_get_wtime();
 
 
     // ---------- check ----------
@@ -93,7 +117,7 @@ int main(int argc, char **argv) {
     }
 
     printf("Verification: %s\n", (success) ? "OK" : "FAILED");
-
+    printf("Threads: %d, N = %d, Time: %f\n", threads, N, end-start);
     // todo ---------- cleanup ----------
     error_b:
     free(B);
