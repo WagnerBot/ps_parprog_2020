@@ -86,9 +86,9 @@ int main(int argc, char **argv) {
                 B[IND(i, j)] = 0.5*A[IND(i, j)] + (A[IND(up, j)] + A[IND(i, left)] + A[IND(i, right)] + A[IND(down, j)])/8;               
             }
         }
-        double *pt = A;
-        A = B;
-        B = C;
+        //double *pt = A;
+        //A = B;
+        //B = C;
 
         memcpy(A, B, sizeof(double)*N*N);
         // every 1000 steps show intermediate step
