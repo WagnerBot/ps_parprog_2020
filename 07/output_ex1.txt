@@ -1,0 +1,29 @@
+Sequential: Size n = 250000000, Time = 1.654352, Sum = 249999999
+Parallel: Size n = 250000000, Time = 2.606374, Sum = 249999999, numThreads = 1
+Parallel: Size n = 250000000, Time = 1.799158, Sum = 249999999, numThreads = 2
+Parallel: Size n = 250000000, Time = 1.636006, Sum = 249999999, numThreads = 4
+Parallel: Size n = 250000000, Time = 1.776416, Sum = 249999999, numThreads = 8
+
+Sequential: Size n = 250000000, Time = 1.655694, Sum = 249999999
+Parallel: Size n = 250000000, Time = 2.607935, Sum = 249999999, numThreads = 1
+Parallel: Size n = 250000000, Time = 1.797574, Sum = 249999999, numThreads = 2
+Parallel: Size n = 250000000, Time = 1.629674, Sum = 249999999, numThreads = 4
+Parallel: Size n = 250000000, Time = 1.776313, Sum = 249999999, numThreads = 8
+
+Sequential: Size n = 250000000, Time = 1.656023, Sum = 249999999
+Parallel: Size n = 250000000, Time = 2.607839, Sum = 249999999, numThreads = 1
+Parallel: Size n = 250000000, Time = 1.796312, Sum = 249999999, numThreads = 2
+Parallel: Size n = 250000000, Time = 1.629343, Sum = 249999999, numThreads = 4
+Parallel: Size n = 250000000, Time = 1.775985, Sum = 249999999, numThreads = 8
+
+Sequential: Size n = 250000000, Time = 1.656024, Sum = 249999999
+Parallel: Size n = 250000000, Time = 2.608719, Sum = 249999999, numThreads = 1
+Parallel: Size n = 250000000, Time = 1.810279, Sum = 249999999, numThreads = 2
+Parallel: Size n = 250000000, Time = 1.629355, Sum = 249999999, numThreads = 4
+Parallel: Size n = 250000000, Time = 1.774498, Sum = 249999999, numThreads = 8
+
+Sequential: Size n = 250000000, Time = 1.656242, Sum = 249999999
+Parallel: Size n = 250000000, Time = 2.608596, Sum = 249999999, numThreads = 1
+Parallel: Size n = 250000000, Time = 1.809326, Sum = 249999999, numThreads = 2
+Parallel: Size n = 250000000, Time = 1.628402, Sum = 249999999, numThreads = 4
+Parallel: Size n = 250000000, Time = 1.777410, Sum = 249999999, numThreads = 8
