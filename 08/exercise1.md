@@ -1,0 +1,72 @@
+# Exercise 1 (Peter Koll, Jonas Wagner)
+
+1. not parallized correctly due to calculating the iterator (i-1) ->
+"True dependence"
+Correction:
+
+    ```c
+
+    int calculate(int i){
+        return 2.0*i*(i-1);
+    }
+    a[0] = 0;
+    #pragma omp parallel for
+    for (i=1; i<N; i++) {
+        b[i] = a[calculate(i)] - a[calculate(i-1)];
+    }
+
+    ```
+
+2. not parallized correctly due to "True dependence" (see above)
+Correction: delete nowait, so first pragma for has to wait
+
+    ```c
+    a[0] = 0;
+    #pragma omp parallel
+    {
+        #pragma omp for
+        for (i=1; i<N; i++) {
+            a[i] = 3.0*i*(i+1);
+        }
+        #pragma omp for
+        for (i=1; i<N; i++) {
+            b[i] = a[i] - a[i-1];
+        }
+    }
+    ```
+
+3. parallized correctly. "True dependence" between x=... and a[i]=...
+
+    ```c
+    #pragma omp parallel for
+    for (i=1; i<N; i++) {
+        x = sqrt(b[i]) - 1;
+        a[i] = x*x + 2*x + 1;
+    }
+    ```
+
+4. Assumption: x is initialzed. parallized correctly,  "True dependence".
+
+    ```c
+    f = 2;
+    #pragma omp parallel for private(f,x)
+    for (i=1; i<N; i++) {
+        x = f * b[i];
+        a[i] = x - 7;
+    }
+    a[0] = x;
+    ```
+
+5. not parallized correctly, race condition and "Output dependence".
+Correction:
+
+    ```c
+    sum = 0; 
+    #pragma omp parallel for
+    for (i=1; i<N; i++) {
+        #pragma omp atomic
+        {
+            sum = sum + b[i];
+        }
+    }
+    ```
