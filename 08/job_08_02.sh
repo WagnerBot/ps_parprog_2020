@@ -11,7 +11,7 @@
 #$ -N had1
 
 # Redirect output stream to this file.
-#$ -o output_task7_1.dat
+#$ -o output_task8_2.dat
 
 # Join the error stream to the output stream.
 #$ -j yes
@@ -20,18 +20,15 @@
 #$ -pe openmp 8
 
 # Increase the virtual memory per slot to 4GB
-#$ -l h_vmem=16G
+#$ -l h_vmem=4G
 
 # Use gcc 8.2.0 as the default gcc
 #module load gcc/8.2.0
 
 # Set up any environment variables
 #export ENVIRONMENT_VARIABLE=foobar
-./ex1 100000000 0 1
-./ex1 100000000 1 1
-./ex1 100000000 1 2
-./ex1 100000000 1 4
-./ex1 100000000 1 8
+gcc -O2 -ftree-vectorize -fopt-info-vec-all -std=c99 analysis.c -o task2
+./task2
 
 
 
