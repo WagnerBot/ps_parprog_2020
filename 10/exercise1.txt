@@ -1,0 +1,9 @@
+flat profile:
+tells which methods we used and how much time they took
+
+call graph:
+tells how much a parent methods calls child methods
+
+we can now optimize the code with parallelization, because we know how much time
+a method needs to be executed and how many times each function is called.
+parallelization can be done by parallel function calls.
