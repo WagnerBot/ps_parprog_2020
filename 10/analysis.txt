@@ -1,3 +1,5 @@
+// Peter Koll, Jonas Wagner
+
 Flat profile:
 
 Each sample counts as 0.01 seconds.
